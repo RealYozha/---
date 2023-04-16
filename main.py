@@ -1,5 +1,6 @@
 import telebot
 from telebot import types
+from time import sleep
 
 token = '6122930605:AAExT_6n1EtpiUgPwAN4YOeXveEBnxCZnuA'
 bot = telebot.TeleBot(token)
@@ -95,9 +96,9 @@ def button_message(message):
 @bot.message_handler(content_types=['text'])
 def message_reply(message):
     if message.text == "Да":
-        bot.send_message(message.chat.id, "Начинаем!")
+        bot.send_message(message.chat.id, "Начинаем! На каждый вопрос у вас есть 7 секунд.")
         score = 0
-        for i in range(30):
+        for i in range(len(questions)):
             keyboard = types.ReplyKeyboardMarkup()
             key_1 = types.KeyboardButton(text=questions[i][2])
             keyboard.add(key_1)
@@ -108,6 +109,7 @@ def message_reply(message):
             bot.send_message(message.chat.id,
                              text=questions[i][0],
                              reply_markup=keyboard)
+            sleep(7)
             if message.text == questions[i][1]:
                 score = score + 1
         text = f"Ваши баллы: {score}"
