@@ -40,3 +40,31 @@
  "Ничего",
  "Пустую строку"
 ]
+[
+ "Укажите оператор ввода:",
+ "input()",
+ "input()",
+ "print()",
+ "int()"
+]
+[
+ "Укажите оператор ввода:",
+ "input()",
+ "input()",
+ "print()",
+ "int()"
+]
+[
+ "Как добавить модуль в программу?",
+ "import library",
+ "import library",
+ "import: library",
+ "import library.py"
+]
+[
+ "Как добавить модуль в программу?",
+ "import library",
+ "import library",
+ "import: library",
+ "import library.py"
+]
